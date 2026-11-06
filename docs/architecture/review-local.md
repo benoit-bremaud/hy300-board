@@ -25,6 +25,7 @@
 | 5 E2E/smoke | ⏸ deferred to the pre-merge run (`--push`); no runnable product |
 
 - Gate: `--push`: **pre-push green** — steps 1, 2 and 4 by hand (no `justfile`), steps 2 (docs), 3 and 5 deferred (never GREEN).
+- Local CI, docs-only profile of skill `local-ci`, run by hand after the push (no `justfile`, `mise.toml` or hooks yet): `typos .` clean (`typos.toml` allows Mosquitto) · `markdownlint-cli2 "**/*.md"` 0 errors on 29 files (`.markdownlint-cli2.jsonc`: MD013 and MD060 off) after 24 real findings were fixed (bare URLs, heading and list spacing, one fence language) · `lychee --offline` 0 errors · `gitleaks git --log-opts=--all` no leaks. Wiring the tiers (`just check`, lefthook, mise pins) is a separate brick.
 - Mermaid: the 6 diagram blocks render with `mmdc` 11.12.0, no syntax error.
 
 ## 🔴 Must Have
