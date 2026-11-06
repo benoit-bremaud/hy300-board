@@ -26,6 +26,7 @@ The two tracks run in parallel: hardware-free bricks whenever the owner is away 
 | #17 | chore(ci): wire the local CI tiers (just, lefthook, mise), docs-only profile | — | `mise x -- just check` green from a clean environment; hooks refuse a staged secret |
 | #7 | feat(tools): redaction script with tests and a pre-commit check | #17 (the check hooks into lefthook) | `tools/redact.sh` covered by tests (MAC, serial, SSID, IP, IPv6 patterns of `security-redaction.md`); runbooks 01–03 and 05 pipe through it |
 | #8 | docs(ha): choose the HDMI box by MCDA with pass/fail gates | ADR-0003 confirmed, or accepted as provisional | ADR-0006 with gates (runs Tailscale; trusts the Caddy root in the player used, or bb-homelab #28 first; HA integration ports listed for the ACL) |
+| #19 | docs(recon): decide whether the isolated hotspot stays up until runbook 04 is done (OTG branch) | — | MCDA recorded; runbooks 03 and 05, NFR-1 and plan §8 aligned |
 | bb#234 | feat(tailscale): default-deny ACL for `tag:media-box` | — (bb-homelab chat) | ACL merged, tag and pre-auth key documented |
 | bb#235 | feat(caddy): 403 to the media box on every host but PopCornTV | bb#234 (the box's tailnet IP range) | matcher merged with a test |
 | bb#236 | feat(dns): resolve bb-homelab names for tailnet clients | — | split DNS on the Pi, or bb#28 delivered |
