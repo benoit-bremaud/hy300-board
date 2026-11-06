@@ -1,8 +1,8 @@
 # Local review — hy300-board (`--push`)
 
 - Date: 2026-11-06
-- Commit: 0f37a19 (the squashed branch, checked at `ccda442` before the squash); head 230e438
-- Scope: branch diff `main...docs/2-board-recon` (4 commits: the squashed dossier, then the log, lint and report commits; round SHAs below refer to the pre-squash local history, tag `local/board-recon-history-2026-11-06`, not pushed)
+- Commit: 0f37a19 (the squashed branch, checked at `ccda442` before the squash); head: the last commit of PR #16
+- Scope: branch diff `main...docs/2-board-recon` (the squashed dossier, then the log, lint, report and roadmap commits; round SHAs below refer to the pre-squash local history, tag `local/board-recon-history-2026-11-06`, not pushed)
 - Checks run: adversarial (Opus, 3 rounds) · docs (doc-auditor, round 1) · secrets · Mermaid render · design, tests, correctness: n/a (documentation-only branch, no code)
 - Verdict: pushed, PR #16 open · Must 0 · Should 0 · Nice 0 (all applied)
 
@@ -11,10 +11,11 @@
 - Round 1 on `43949d8`: Must 10 (13 reconciled with the doc audit) · Should 19 · Nice 9 · unverified 0 · Push gate: closed
 - Round 2 (verify `916df42`): 9 fixed · 1 not fixed (stale copy in the plan) · 1 regressed (ADR-0002 sensitivity) · new Must 3 · Push gate: closed — 4 Must open
 - Round 3 (verify `ccda442`): 4 Must fixed · 7 Should fixed · 6 Nice fixed · new Must 0 · new Should 1 (photo history) · new Nice 3 · Push gate: open
+- Rounds 5–7 (verify `f8a7366`, `4a3b42f`, `a51bc00`: roadmap, issues #17–#19): 3 Must fixed (OTG trigger of #5 and its place before #3; REQ-5/NFR-5 sourced from #18; runbook 05 only when the review clause fired) · Should and Nice applied · **Push gate: open**
 - Round 4 (verify `230e438`, rebuilt branch): photo blobs in `main..HEAD` verified EXIF-free, Should and 3 Nice fixed · new Must 0 · new Should 1 (this report, fixed here) · **Push gate: open**
 - Hosted reviewers (filled at the pre-merge run): Copilot pending · Codex optional
 
-## Pre-merge gate (head SHA 230e438)
+## Pre-merge gate (head: last commit of PR #16; secrets re-run on every push)
 
 | Step | Result |
 |---|---|

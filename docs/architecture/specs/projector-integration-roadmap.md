@@ -26,7 +26,7 @@ The two tracks run in parallel: hardware-free bricks whenever the owner is away 
 | #17 | chore(ci): wire the local CI tiers (just, lefthook, mise), docs-only profile | — | `mise x -- just check` green from a clean environment; hooks refuse a staged secret |
 | #7 | feat(tools): redaction script with tests and a pre-commit check | #17 (the check hooks into lefthook) | `tools/redact.sh` covered by tests (MAC, serial, SSID, IP, IPv6 patterns of `security-redaction.md`); runbooks 01–03 and 05 pipe through it |
 | #8 | docs(ha): choose the HDMI box by MCDA with pass/fail gates | ADR-0003 confirmed, or accepted as provisional | ADR-0006 with gates (runs Tailscale; trusts the Caddy root in the player used, or bb-homelab #28 first; HA integration ports listed for the ACL) |
-| #19 | docs(recon): decide whether the isolated hotspot stays up until runbook 04 is done (OTG branch) | — | MCDA recorded; runbooks 03 and 05, NFR-1 and plan §8 aligned |
+| #19 | docs(recon): decide whether the isolated hotspot stays up until runbook 04 is done (OTG branch) | — | MCDA recorded; runbooks 03 and 05, NFR-1 and plan §5 step 4 aligned (entry in plan §8) |
 | bb#234 | feat(tailscale): default-deny ACL for `tag:media-box` | — (bb-homelab chat) | ACL merged, tag and pre-auth key documented |
 | bb#235 | feat(caddy): 403 to the media box on every host but PopCornTV | bb#234 (the box's tailnet IP range) | matcher merged with a test |
 | bb#236 | feat(dns): resolve bb-homelab names for tailnet clients | — | split DNS on the Pi, or bb#28 delivered |
@@ -38,10 +38,10 @@ The two tracks run in parallel: hardware-free bricks whenever the owner is away 
 | #18 | feat(recon): identify the board on the bench (runbook 01) | runbook 00 read; Wi-Fi and Bluetooth off before anything | REQ-5 facts recorded and redacted; OTG branch decided |
 | #3 | feat(recon): back up the firmware read-only and verify the dump (runbook 02) | #18 (OTG port known); in the OTG branch, #5's capture running first; #7 for the paste of any output | T-6 pass per path, or the no-go recorded; T-14 clean |
 | #4 | feat(recon): capture the IR codes and the projector power facts (runbook 04) | #3 (no mains cut before a backup attempt, runbook 04 precondition) | REQ-7 (UC6 row) filled; ADR-0005 frozen; ADR-0003 review clause evaluated |
-| #5 | feat(recon): egress capture on an isolated hotspot (runbook 03); if #4 lowered C, the cold-boot checks (runbook 05) in the same hotspot session | OTG branch of #18 (then before #3: the dump goes over network ADB on this hotspot), or #4 lowers C (ADR-0003 review clause) | destination list reviewed; isolation pass/fail recorded; if the review clause fired, ADB 5555 after cold boot recorded (A's cell) |
+| #5 | feat(recon): egress capture on an isolated hotspot (runbook 03); if #4 lowered C, the cold-boot checks (runbook 05) in the same hotspot session | OTG branch of #18 (#19 decided first; then before #3: the dump goes over network ADB on this hotspot), or #4 lowers C (ADR-0003 review clause) | destination list reviewed; isolation pass/fail recorded; if the review clause fired, ADB 5555 after cold boot recorded (A's cell) |
 | #6 | chore(recon): UART boot log (optional) | #7 (log through the redaction script) | boot log in `uart-logs/`, SoC confirmed |
 
-v0.1 acceptance: the "Acceptance v0.1" paragraph of plan §5 governs; in short: (SoC and build; dump verified or no-go; egress list reviewed if captured; the pass/fail list; ADR-0003 confirmed, or re-scored after steps 4 and 6 if step 5 lowered C; ADR-0005 frozen).
+v0.1 acceptance: the "Acceptance v0.1" paragraph of plan §5 governs; in short: SoC and build; dump verified or no-go; egress list reviewed if captured; the pass/fail list; ADR-0003 confirmed, or re-scored after steps 4 and 6 if step 5 lowered C; ADR-0005 frozen.
 
 ### v0.2 → v1.0
 
