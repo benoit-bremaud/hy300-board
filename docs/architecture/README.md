@@ -45,3 +45,4 @@ flowchart LR
 4. `specs/projector-integration-risks.md`, `specs/security-redaction.md`.
 5. `runbooks/` — procedures a third party follows; `00-safety.md` first. Deviation from the `conception-naming` layout: runbooks live here because NFR-7 is realised by them and the matrix cites them; 00–05 exist, the v0.2/v0.3 runbooks come with their bricks.
 6. `traceability-matrix.md`, `glossary.md`.
+7. `specs/projector-integration-roadmap.md` — the living order of the bricks (two tracks: hardware-free and on the bench), updated after every merged brick.
