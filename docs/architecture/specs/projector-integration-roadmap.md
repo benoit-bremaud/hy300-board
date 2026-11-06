@@ -2,7 +2,7 @@
 
 The living order of the bricks of epic #1, one GitHub issue each, with what each needs and what "done" means. Plan §5 of `docs/research/2026-11-06-framing-and-plan.md` is the frozen record of the milestones; this file is updated at every merged brick (one chat per brick, `PROJECT_LOG.md` keeps the history).
 
-Last updated: 2026-11-06, after PR #16 (brick #2).
+Last updated: 2026-11-06, with PR #16 (brick #2, in review).
 
 ## Where we are
 
@@ -30,17 +30,17 @@ The two tracks run in parallel: hardware-free bricks whenever the owner is away 
 | bb#235 | feat(caddy): 403 to the media box on every host but PopCornTV | bb#234 (the box's tailnet IP range) | matcher merged with a test |
 | bb#236 | feat(dns): resolve bb-homelab names for tailnet clients | — | split DNS on the Pi, or bb#28 delivered |
 
-### Track 2 — on the bench (plan §5 order, runbook 00 first every session; if #18 takes the OTG branch, #5 comes first)
+### Track 2 — on the bench (plan §5 order, runbook 00 first every session; if #18 takes the OTG branch, #5's capture comes first)
 
 | # | Brick | Depends on | Done when |
 |---|---|---|---|
 | #18 | feat(recon): identify the board on the bench (runbook 01) | runbook 00 read; Wi-Fi and Bluetooth off before anything | REQ-5 facts recorded and redacted; OTG branch decided |
 | #3 | feat(recon): back up the firmware read-only and verify the dump (runbook 02) | #18 (OTG port known); in the OTG branch, #5's capture running first; #7 for the paste of any output | T-6 pass per path, or the no-go recorded; T-14 clean |
 | #4 | feat(recon): capture the IR codes and the projector power facts (runbook 04) | #3 (no mains cut before a backup attempt, runbook 04 precondition) | REQ-7 (UC6 row) filled; ADR-0005 frozen; ADR-0003 review clause evaluated |
-| #5 | feat(recon): egress capture on an isolated hotspot (runbook 03), then the cold-boot checks (runbook 05) in the same hotspot session | OTG branch of #18 (then before #3: the dump goes over network ADB on this hotspot), or #4 lowers C (ADR-0003 review clause) | destination list reviewed; isolation pass/fail recorded; ADB 5555 after cold boot recorded (A's cell) |
+| #5 | feat(recon): egress capture on an isolated hotspot (runbook 03); if #4 lowered C, the cold-boot checks (runbook 05) in the same hotspot session | OTG branch of #18 (then before #3: the dump goes over network ADB on this hotspot), or #4 lowers C (ADR-0003 review clause) | destination list reviewed; isolation pass/fail recorded; if the review clause fired, ADB 5555 after cold boot recorded (A's cell) |
 | #6 | chore(recon): UART boot log (optional) | #7 (log through the redaction script) | boot log in `uart-logs/`, SoC confirmed |
 
-v0.1 acceptance: the "Acceptance v0.1" paragraph of plan §5, word for word (SoC and build; dump verified or no-go; egress list reviewed if captured; the pass/fail list; ADR-0003 confirmed, or re-scored after steps 4 and 6 if step 5 lowered C; ADR-0005 frozen).
+v0.1 acceptance: the "Acceptance v0.1" paragraph of plan §5 governs; in short: (SoC and build; dump verified or no-go; egress list reviewed if captured; the pass/fail list; ADR-0003 confirmed, or re-scored after steps 4 and 6 if step 5 lowered C; ADR-0005 frozen).
 
 ### v0.2 → v1.0
 
