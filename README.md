@@ -6,11 +6,11 @@ Hardware notes, firmware dumps, UART logs and tools for the HY300 board.
 
 | Folder | Content |
 |---|---|
-| `docs/` | Board notes, pinouts, findings, conception documents |
+| `docs/` | `research/` (dated notes, the plan), `architecture/` (conception dossier, start at `docs/architecture/README.md`) |
 | `photos/` | Board photos (both sides, close-ups of chips and test pads) |
 | `dumps/` | Flash / firmware dumps (large binaries are git-ignored; see `dumps/README.md`) |
 | `uart-logs/` | Serial console captures |
-| `tools/` | Scripts used to capture, parse or flash |
+| `tools/` | Scripts used to capture, parse |
 
 ## Status
 
