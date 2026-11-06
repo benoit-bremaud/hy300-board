@@ -61,12 +61,12 @@ The 2026-11-06 MCDA scored "Linux mainline" at 245/500 on the assumption of a re
 
 ## Sources
 
-- https://github.com/YuujiLab/HY300-H713-Research — dump, partition layout, UART/FEL, root, anti-rollback
-- https://github.com/well0nez/allwinner-h713-linux — mainline port, board status table, installer, UART doc
-- https://github.com/shift/sun50iw12p1-research and https://github.com/srgneisner/hy300-linux-porting — earlier research-stage ports
-- https://github.com/schaumann-byte/hy300-projector-homeassistant — dedicated HA integration (Lumina Go + IR + ADB)
-- https://www.home-assistant.io/integrations/androidtv — core ADB integration
-- https://gist.github.com/probonopd/3ad6b7777caea1503f00d5fe7710ad06 — launcher replacement, debloat, autostart notes
-- https://xdaforums.com/t/beta-android-tv-and-root-tutorial-for-allwinner-h713-based-projectors.4744020/ — Android TV + root tutorial (beta)
-- https://www.magcubic.com/es/pages/official-statement-regarding-certain-apk-files-on-magcubic-hy300-series-products — vendor statement on malicious APKs
-- https://androidpctv.com/firmware-magcubic-hy300-allwinner-h713/ and https://androidpctv.com/firmware-magcubic-hy300-pro-ultra-h726/ — H713 vs H726 firmware
+- <https://github.com/YuujiLab/HY300-H713-Research> — dump, partition layout, UART/FEL, root, anti-rollback
+- <https://github.com/well0nez/allwinner-h713-linux> — mainline port, board status table, installer, UART doc
+- <https://github.com/shift/sun50iw12p1-research> and <https://github.com/srgneisner/hy300-linux-porting> — earlier research-stage ports
+- <https://github.com/schaumann-byte/hy300-projector-homeassistant> — dedicated HA integration (Lumina Go + IR + ADB)
+- <https://www.home-assistant.io/integrations/androidtv> — core ADB integration
+- <https://gist.github.com/probonopd/3ad6b7777caea1503f00d5fe7710ad06> — launcher replacement, debloat, autostart notes
+- <https://xdaforums.com/t/beta-android-tv-and-root-tutorial-for-allwinner-h713-based-projectors.4744020/> — Android TV + root tutorial (beta)
+- <https://www.magcubic.com/es/pages/official-statement-regarding-certain-apk-files-on-magcubic-hy300-series-products> — vendor statement on malicious APKs
+- <https://androidpctv.com/firmware-magcubic-hy300-allwinner-h713/> and <https://androidpctv.com/firmware-magcubic-hy300-pro-ultra-h726/> — H713 vs H726 firmware

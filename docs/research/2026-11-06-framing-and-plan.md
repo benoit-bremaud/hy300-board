@@ -96,6 +96,7 @@ Order is mandatory: the firmware joins no network before the dump and the egress
 Acceptance v0.1: SoC and build identified; dump verified or the no-go recorded; egress list reviewed (if captured); pass/fail recorded for: OTG port, each dump path, standby state, auto-boot on mains return, IR codes captured, IR power-on from full off, IR input selection, HDMI input remembered; under A also `KEYCODE_WAKEUP`, ADB 5555 after cold boot, Tailscale after cold boot, CA install without screen lock, throughput gate. ADR 0003 (C) confirmed, or, if step 5 lowered C, steps 4 and 6 run and §3 re-scored before it is confirmed; ADR 0005 frozen.
 
 ### v0.2 — Home Assistant (strategy C)
+
 - **Box choice by MCDA** (issue; the ACL of dependency (a) lists the ports HA needs per candidate, e.g. 6466/6467 Android TV Remote, 5555 `androidtv`, 8009 cast, and the host is set by hand since mDNS discovery does not cross the tailnet): candidates a Raspberry Pi with a browser kiosk, an Android TV / Google TV stick (HA core `androidtv` and Android TV Remote integrations), a Chromecast-class device. **Pass/fail gates before the matrix**: (1) runs Tailscale (rules out cast-only devices); (2) trusts the Caddy root in the player actually used (Android TV / Google TV ship WebView-based browsers that ignore a user CA by default, and may have no certificate-install screen — to verify), **or** bb-homelab #28 (public domain + ACME) is delivered first, which makes #28 a likely dependency under C. Criteria: HA integration maturity, codecs, remote-control UX, cost, power-on by HA.
 - Box on the guest SSID + tailnet with the D3 rules (tag, ACL, Caddy 403, DNS, CA, throughput gate); the three cross-repo bricks delivered first.
 - Entities: the box's `media_player` (state, power, volume, app launch, remote keys; volume lives here since audio travels over HDMI); the projector's power and HDMI input by IR (ESP-based or Broadlink blaster, codes from v0.1 step 5), or a smart plug + IR off if IR power-on failed and auto-boot was confirmed (D4).
@@ -106,6 +107,7 @@ Acceptance v0.1: SoC and build identified; dump verified or the no-go recorded; 
 Acceptance v0.2: every entity above works from a cold boot three times in a row; latency NFR measured; projector power and HDMI input driven at least once by HA.
 
 ### v0.3 — PopCornTV on screen (strategy C)
+
 - Player measurement (D6) on the box: dropped-frame counts, Pi CPU load (the Pi 5 has no hardware encoder: HLS transcode is a Pi risk), box thermal state over 2 h; MCDA; implementation.
 - Dedicated non-owner PopCornTV account for the box (ADR-0010 allows it); persistent session. If PopCornTV lacks a needed feature, an issue is filed as `benoit-bremaud/popcorntv#<n>` at v0.3 start.
 - **[A]** instead: measurement on the projector, debloat + launcher runbook (D5) with the undo command per package.
@@ -113,12 +115,14 @@ Acceptance v0.2: every entity above works from a cold boot three times in a row;
 Acceptance v0.3: 1080p direct play for 2 h with < 0.5 % dropped frames and no thermal throttling; login survives a reboot; family can start a film with the remote only.
 
 ### v1.0
+
 - Signed tag; "reproduce at home" guide; dry run of every runbook by someone other than the author (or, failing that, the owner on a fresh machine and account) following only the repository: zero blocking deviations. The third-party claim of section 1 covers exactly what this dry run covers.
 - QA pass limited to what applies (HA dashboard via `qa-browser-check`; projector and box flows by the runbook checklist).
 
 Acceptance v1.0: from a cold projector, movie night in ≤ 3 remote presses + 1 HA tap (the tap powers the projector by IR, selects HDMI and starts the box; the presses pick the film); all of v0.1–v0.3 acceptance green; traceability matrix complete.
 
 ### Later
+
 - **v2** playback driven from the phone (PopCornTV "playback target").
 - **v3** Linux on the board: study only, opened once the SoC and a loader are known.
 - HA extras: Bluetooth audio output, sleep timer, now-playing from the PopCornTV API, energy via smart plug, on-screen toast, ECO/brightness.
@@ -130,7 +134,7 @@ Acceptance v1.0: from a cold projector, movie night in ≤ 3 remote presses + 1 
 
 ## 7. Conception dossier skeleton (created on validation)
 
-```
+```text
 docs/architecture/
   README.md, glossary.md, traceability-matrix.md
   decisions/0001-record-architecture-decisions.md

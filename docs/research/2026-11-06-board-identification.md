@@ -54,6 +54,6 @@ What the 119 teardown photos (taken 2026-11-05, read on 2026-11-06) establish ab
 
 ## Sources
 
-- https://www.rock-chips.com/a/en/products/RK6_Series/2025/1208/2128.html — RK621 product page
-- https://rockchip.fr/RK621%20datasheet%20V1.0.pdf — RK621 datasheet
-- https://github.com/rockchip-linux/rkdeveloptool — Maskrom / loader tool
+- <https://www.rock-chips.com/a/en/products/RK6_Series/2025/1208/2128.html> — RK621 product page
+- <https://rockchip.fr/RK621%20datasheet%20V1.0.pdf> — RK621 datasheet
+- <https://github.com/rockchip-linux/rkdeveloptool> — Maskrom / loader tool
