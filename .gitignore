@@ -1,0 +1,14 @@
+# Raw firmware / flash dumps: large and possibly containing device-specific
+# secrets (keys, MAC addresses). Track their SHA-256 in dumps/README.md instead.
+dumps/*
+!dumps/README.md
+
+# Large photos and captures
+*.raw
+*.img
+*.bin
+
+# Environment and editor
+.env
+.env.*
+.DS_Store
