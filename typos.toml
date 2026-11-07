@@ -1,0 +1,6 @@
+[default.extend-words]
+# Eclipse Mosquitto, the MQTT broker on the homelab Pi.
+Mosquitto = "Mosquitto"
+
+[files]
+extend-exclude = ["photos/"]

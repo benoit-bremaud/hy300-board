@@ -1,0 +1,8 @@
+{
+  // Docs-only profile of skill local-ci: prose and wide tables wrap in the editor.
+  "config": {
+    "MD013": false,
+    "MD060": false
+  },
+  "ignores": ["photos/**", "node_modules/**"]
+}

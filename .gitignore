@@ -7,8 +7,14 @@ dumps/*
 *.raw
 *.img
 *.bin
+*.pcap
+*.pcapng
 
 # Environment and editor
 .env
 .env.*
 .DS_Store
+
+# Full teardown photo set (196 MB, 2026-11-05): kept locally, only the
+# curated photos in photos/ are tracked
+photos/raw/
